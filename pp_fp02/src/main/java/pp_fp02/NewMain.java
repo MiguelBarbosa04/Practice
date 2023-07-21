@@ -155,36 +155,30 @@ public class NewMain {
         // Percorre listaA para encontrar elementos diferentes de listaB
         for (int i = 0; i < tamanhoA; i++) {
             // Inicialmente, assume que o elemento não está em listaB
-            boolean encontradoEmListaB = false;
+            boolean encontradoEmListaB = true;
 
             // Percorre listaB para verificar se o elemento está presente
             for (int j = 0; j < tamanhoB; j++) {
                 if (listaA[i] == listaB[j]) {
-                    encontradoEmListaB = true;
+                    encontradoEmListaB = false;
                     break; // Encontrou o elemento em listaB, não precisa continuar procurando
                 }
             }
 
             // Se o elemento não foi encontrado em listaB, adiciona ao vetor listaD
-            if (!encontradoEmListaB) {
+            if (encontradoEmListaB) {
                 listaD[contadorDiferentes] = listaA[i];
                 contadorDiferentes++;
             }
         }
 
-        // Cria um novo vetor com o tamanho exato da quantidade de elementos diferentes
-        int[] novoVetorD = new int[contadorDiferentes];
-
-        // Copia os elementos de listaD para o novo vetor
-        for (int i = 0; i < contadorDiferentes; i++) {
-            novoVetorD[i] = listaD[i];
-        }
-
+        
         // Imprime o vetor novoVetorD
         System.out.print("O vetor D é ");
         for (int i = 0; i < contadorDiferentes; i++) {
-            System.out.print(novoVetorD[i] + " ");
+            System.out.print(listaD[i] + " ");
         }
+   
 
 //Utilizamos uma variável contadorDiferentes para acompanhar a quantidade de elementos diferentes encontrados em listaA em relação a listaB.
 //Em seguida, o programa inicia um loop for que percorre todos os elementos do vetor listaA.
@@ -194,8 +188,7 @@ public class NewMain {
 //Após o loop interno, verificamos se encontradoEmListaB ainda é false. Isso indica que o elemento atual de listaA não foi encontrado em listaB, portanto, é diferente de todos os elementos em listaB. 
 //Nesse caso, adicionamos o elemento ao vetor listaD na posição contadorDiferentes, que nos ajuda a acompanhar o próximo índice disponível no vetor listaD, e incrementamos contadorDiferentes.
 //Após percorrer o vetor listaA, criamos um novo vetor chamado novoVetorD com tamanho exato da quantidade de elementos diferentes encontrados. 
-//Em seguida, copiamos os elementos de listaD para novoVetorD, garantindo que o novo vetor contenha apenas os elementos diferentes encontrados em listaA em relação a listaB.
-//Por fim, o programa imprime o vetor novoVetorD, que é o resultado final com os elementos de listaA que não se encontram em listaB.
+//Por fim, o programa imprime o vetor listaD, que é o resultado final com os elementos de listaA que não se encontram em listaB.
 //A saída será uma sequência de elementos do vetor novoVetorD, mostrando os elementos de listaA que não estão presentes em listaB. 
     }
 }
