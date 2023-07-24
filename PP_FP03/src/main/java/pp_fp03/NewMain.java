@@ -18,7 +18,8 @@ public class NewMain {
 
 //        ex1();
 //        ex2Primos();
-        ex2Perfeitos();
+        //ex2Perfeitos();
+        ex3();
 
     }
 
@@ -94,23 +95,23 @@ public class NewMain {
     }
 
     public static void ex2Perfeitos() {
-    int[] vetor = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] vetor = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-    for (int i = 0; i < vetor.length; i++) {
-        int divisorSum = 1;
-        for (int j = 2; j <= vetor[i] / 2; j++) {
-            if (vetor[i] % j == 0) {
-                divisorSum += j;
+        for (int i = 0; i < vetor.length; i++) {
+            int divisorSum = 1;
+            for (int j = 2; j <= vetor[i] / 2; j++) {
+                if (vetor[i] % j == 0) {
+                    divisorSum += j;
+                }
+            }
+
+            if (divisorSum == vetor[i]) {
+                System.out.println(vetor[i] + " é um número perfeito.");
+            } else {
+                System.out.println(vetor[i] + " não é um número perfeito.");
             }
         }
-
-        if (divisorSum == vetor[i]) {
-            System.out.println(vetor[i] + " é um número perfeito.");
-        } else {
-            System.out.println(vetor[i] + " não é um número perfeito.");
-        }
     }
-}
 //vetor[i] = 1
 //
 //O loop interno não será executado porque vetor[0] / 2 é igual a 0, então divisorSum continua sendo 1.
@@ -151,4 +152,60 @@ public class NewMain {
 //
 //Para vetor[9] = 10, o loop interno será executado duas vezes (com j = 2 e j = 3). 10 % 2 é igual a 0 e 10 % 3 não é igual a 0, então divisorSum é atualizado para 1 + 2 = 3.
 //A saída será: "10 is not a perfect number."
+
+    public static void ex3() {
+
+        int[][] matriz = {
+            {1, 2, 3},
+            {4, 2, 6},
+            {7, 8, 9},
+            {10, 2, 1}
+        };
+
+        int repetido = 0;
+        int numMaisRepetido = 0;
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                int cont = 0;
+                for (int k = 0; k < matriz.length; k++) {
+                    for (int l = 0; l < matriz[k].length; l++) {
+                        if (matriz[i][j] == matriz[k][l]) {
+                            cont++;
+                        }
+                    }
+
+                }
+                if (repetido < cont) {
+                    numMaisRepetido = matriz[i][j];
+                    repetido = cont;
+                }
+            }
+        }
+        System.out.println("o número que mai se repete é " + numMaisRepetido + "Que aparece " + repetido + "vezes");
+
+        for (int i = 0; i < matriz.length; i++) {
+            int maior = matriz[i][0]; // Inicializa o maior valor com o primeiro elemento da linha
+            int menor = matriz[i][0]; // Inicializa o menor valor com o primeiro elemento da linha
+
+            for (int j = 1; j < matriz[i].length; j++) {
+                int elementoAtual = matriz[i][j];
+
+                // Atualiza o maior valor, se necessário
+                if (elementoAtual > maior) {
+                    maior = elementoAtual;
+                }
+
+                // Atualiza o menor valor, se necessário
+                if (elementoAtual < menor) {
+                    menor = elementoAtual;
+                }
+            }
+
+            System.out.println("Maior valor na linha " + (i + 1) + ": " + maior);
+            System.out.println("Menor valor na linha " + (i + 1) + ": " + menor);
+        }
+
+    }
+
 }
