@@ -154,5 +154,60 @@ public class NewMain {
 //A saída será: "10 is not a perfect number."
 
 
+public static void ex3() {
+
+    int[][] matriz = {
+        {1, 2, 3},
+        {4, 2, 6},
+        {7, 8, 9},
+        {10, 2, 1}
+    };
+
+    int repetido = 0;
+    int numMaisRepetido = 0;
+
+    for (int i = 0; i < matriz.length; i++) {
+        for (int j = 0; j < matriz[i].length; j++) {
+            int cont = 0;
+            for (int k = 0; k < matriz.length; k++) {
+                for (int l = 0; l < matriz[k].length; l++) {
+                    if (matriz[i][j] == matriz[k][l]) {
+                        cont++;
+                    }
+                }
+
+            }
+            if (repetido < cont) {
+                numMaisRepetido = matriz[i][j];
+                repetido = cont;
+            }
+        }
+    }
+    System.out.println("o número que mai se repete é " + numMaisRepetido + "Que aparece " + repetido + "vezes");
+
+    for (int i = 0; i < matriz.length; i++) {
+        int maior = matriz[i][0]; // Inicializa o maior valor com o primeiro elemento da linha
+        int menor = matriz[i][0]; // Inicializa o menor valor com o primeiro elemento da linha
+
+        for (int j = 1; j < matriz[i].length; j++) {
+            int elementoAtual = matriz[i][j];
+
+            // Atualiza o maior valor, se necessário
+            if (elementoAtual > maior) {
+                maior = elementoAtual;
+            }
+
+            // Atualiza o menor valor, se necessário
+            if (elementoAtual < menor) {
+                menor = elementoAtual;
+            }
+        }
+
+        System.out.println("Maior valor na linha " + (i + 1) + ": " + maior);
+        System.out.println("Menor valor na linha " + (i + 1) + ": " + menor);
+    }
+
+}
+
 
 }
