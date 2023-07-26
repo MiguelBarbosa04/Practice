@@ -19,8 +19,12 @@ public class NewMain {
 //        ex1();
 //        ex2Primos();
         //ex2Perfeitos();
-      //  ex3();
-        ex4;
+        //ex3();
+        // ex4(args);
+        //ex5(args);
+        //ex6(args);
+        //ex7(args);
+        ex8(args);
 
     }
 
@@ -153,60 +157,180 @@ public class NewMain {
 //
 //Para vetor[9] = 10, o loop interno será executado duas vezes (com j = 2 e j = 3). 10 % 2 é igual a 0 e 10 % 3 não é igual a 0, então divisorSum é atualizado para 1 + 2 = 3.
 //A saída será: "10 is not a perfect number."
-public static void ex3() {
 
-    int[][] matriz = {
-        {1, 2, 3},
-        {4, 2, 6},
-        {7, 8, 9},
-        {10, 2, 1}
-    };
+    public static void ex3() {
 
-    int repetido = 0;
-    int numMaisRepetido = 0;
+        int[][] matriz = {
+            {1, 2, 3},
+            {4, 2, 6},
+            {7, 8, 9},
+            {10, 2, 1}
+        };
 
-    for (int i = 0; i < matriz.length; i++) {
-        for (int j = 0; j < matriz[i].length; j++) {
-            int cont = 0;
-            for (int k = 0; k < matriz.length; k++) {
-                for (int l = 0; l < matriz[k].length; l++) {
-                    if (matriz[i][j] == matriz[k][l]) {
-                        cont++;
+        int repetido = 0;
+        int numMaisRepetido = 0;
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                int cont = 0;
+                for (int k = 0; k < matriz.length; k++) {
+                    for (int l = 0; l < matriz[k].length; l++) {
+                        if (matriz[i][j] == matriz[k][l]) {
+                            cont++;
+                        }
                     }
+
+                }
+                if (repetido < cont) {
+                    numMaisRepetido = matriz[i][j];
+                    repetido = cont;
+                }
+            }
+        }
+        System.out.println("o número que mai se repete é " + numMaisRepetido + "Que aparece " + repetido + "vezes");
+
+        for (int i = 0; i < matriz.length; i++) {
+            int maior = matriz[i][0]; // Inicializa o maior valor com o primeiro elemento da linha
+            int menor = matriz[i][0]; // Inicializa o menor valor com o primeiro elemento da linha
+
+            for (int j = 1; j < matriz[i].length; j++) {
+                int elementoAtual = matriz[i][j];
+
+                // Atualiza o maior valor, se necessário
+                if (elementoAtual > maior) {
+                    maior = elementoAtual;
                 }
 
+                // Atualiza o menor valor, se necessário
+                if (elementoAtual < menor) {
+                    menor = elementoAtual;
+                }
             }
-            if (repetido < cont) {
-                numMaisRepetido = matriz[i][j];
-                repetido = cont;
+
+            System.out.println("Maior valor na linha " + (i + 1) + ": " + maior);
+            System.out.println("Menor valor na linha " + (i + 1) + ": " + menor);
+        }
+
+    }
+
+    public static void ex4(String[] args) {
+
+        if (args.length == 1) {
+            try {
+                int graus = Integer.parseInt(args[0]);
+                System.out.println("Você digitou: " + graus);
+                double pi = 3.14159;
+                double radianos = (graus * (pi / 180));
+                System.out.println(graus + " Graus corresponde a " + radianos + " radianos");
+            } catch (NumberFormatException e) {
+
+                System.out.println("O argumento deve ser um número inteiro válido.");
             }
         }
     }
-    System.out.println("o número que mai se repete é " + numMaisRepetido + "Que aparece " + repetido + "vezes");
 
-    for (int i = 0; i < matriz.length; i++) {
-        int maior = matriz[i][0]; // Inicializa o maior valor com o primeiro elemento da linha
-        int menor = matriz[i][0]; // Inicializa o menor valor com o primeiro elemento da linha
+    public static void ex5(String[] args) {
 
-        for (int j = 1; j < matriz[i].length; j++) {
-            int elementoAtual = matriz[i][j];
+        if (args.length != 2) {
+            System.out.println("Uso: java ConverteMoeda <valor> <moeda>");
+            System.out.println("<valor> - valor a ser convertido");
+            System.out.println("<moeda> - moeda original (euro ou dolar)");
+            return;
+        }
 
-            // Atualiza o maior valor, se necessário
-            if (elementoAtual > maior) {
-                maior = elementoAtual;
+        double valor = Double.parseDouble(args[0]);
+        String moeda = args[1].toLowerCase();
+        double taxa = 0.9184;
+
+        try {
+            if (moeda.equals("euro")) {
+                double valorEuro = valor / taxa;
+                System.out.println("O valor convertido para euro é " + valorEuro);
+            }
+            if (moeda.equals("dolar")) {
+                double valorDolar = valor / taxa;
+                System.out.println("O valor convertido para euro é " + valorDolar);
+            } else {
+                System.out.println("Moeda inválida");
             }
 
-            // Atualiza o menor valor, se necessário
-            if (elementoAtual < menor) {
-                menor = elementoAtual;
+        } catch (NumberFormatException e) {
+            System.out.println("O argumento foi inválido.");
+        }
+    }
+
+    public static void ex6(String[] args) {
+
+        if (args.length != 1) {
+            System.out.println("Converte cêntimos para euros e cêntimos");
+            System.out.println("<centimos>");
+            return;
+        }
+        int centimos = Integer.parseInt(args[0]);
+        try {
+            int euros = centimos / 100;
+            int centimosRestantes = centimos % 100;
+            System.out.println("O valor é: " + euros + " euros e " + centimosRestantes + " centimos");
+        } catch (NumberFormatException e) {
+            System.out.println("O argumento foi inválido.");
+        }
+
+    }
+
+    public static void ex7(String[] args) {
+
+        if (args.length != 2) {
+            System.out.println("Diga dois numeros inteiros <numero1> <numero2>");
+            return;
+        }
+
+        try {
+            int dividendo = Integer.parseInt(args[0]);
+            int divisor = Integer.parseInt(args[1]);
+            int resultado = 0;
+            while (dividendo >= divisor) {
+                dividendo -= divisor;
+                resultado++;
+            }
+            System.out.println("Resultado da divisÃ£o: " + resultado);
+            System.out.println("Resto da divisÃ£o: " + dividendo);
+
+        } catch (NumberFormatException e) {
+            System.out.println("O argumento foi inválido.");
+        }
+
+    }
+
+    public static void ex8(String[] args) {
+
+        if (args.length != 1) {
+            System.out.println("Diga o montande em euros e centimos <euros>.<centimos>");
+            return;
+        }
+
+        double montanteEmEuros = Double.parseDouble(args[0]);
+
+        if (montanteEmEuros <= 0) {
+            System.out.println("O valor em euros deve ser maior que zero.");
+            return;
+        }
+
+        int euros = (int) montanteEmEuros;
+        int centimos = (int) ((montanteEmEuros - euros) * 100);
+
+        System.out.println("Moedas a receber:");
+
+        double[] moedas = {2, 1, 0.50, 0.20, 0.10, 0.05, 0.02, 0.01};
+        for (double moeda : moedas) {
+            int quantidade =(int) (euros / moeda);
+            if (quantidade > 0) {
+                System.out.println(quantidade + " moeda(s) de " + moeda + " euros");
+                euros %= moeda;
             }
         }
 
-        System.out.println("Maior valor na linha " + (i + 1) + ": " + maior);
-        System.out.println("Menor valor na linha " + (i + 1) + ": " + menor);
+        if (centimos > 0) {
+            System.out.println(centimos + " moeda(s) de " + centimos + " cêntimos");
+        }
     }
-
-}
-
-
 }
