@@ -11,10 +11,26 @@ package pp_fp04.exchange;
  */
 public class CurrencyRates {
 
-    double dolar = 1.00000;
-    double euro = 1.00000;
-    double iene = 1.00000;
-double dolarToeuro = 0.76900;
-    
+    private double euroToDolar;
+    private double euroToIene;
+    private double euroToGBP;
+
+    public CurrencyRates(double euroToDolar, double euroToIene, double euroToGBP) {
+        this.euroToDolar = euroToDolar;
+        this.euroToIene = euroToIene;
+        this.euroToGBP = euroToGBP;
+    }
+
+    public double getEuroToDolar() {
+        return euroToDolar;
+    }
+
+    public double getEuroToIene() {
+        return euroToIene;
+    }
+
+    public double getEuroToGBP() {
+        return euroToGBP;
+    }
 
 }
