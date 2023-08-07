@@ -5,6 +5,9 @@
  */
 package pp_fp04;
 
+import pp_fp04.exchange.CurrencyRates;
+import pp_fp04.book.Book;
+
 /**
  *
  * @author Miguel
@@ -43,22 +46,32 @@ public class Main {
         System.out.print("Comida");
         System.out.println(User.expenses.foodValues[0]);
 
-        System.out.println("TOTAL CARRO: " + totalDespesas(User.expenses.carValues));
-        System.out.println("Média carro: " + totalDespesas(User.expenses.carValues) / 31);
+        System.out.println("TOTAL CARRO (EM EURO): " + totalDespesas(User.expenses.carValues));
+        System.out.println("Média carro (EM EURO): " + totalDespesas(User.expenses.carValues) / 31);
 
-        System.out.println("TOTAL f0od: " + totalDespesas(User.expenses.foodValues));
-        System.out.println("Média food: " + totalDespesas(User.expenses.foodValues) / 31);
+        System.out.println("TOTAL f0od (EM EURO): " + totalDespesas(User.expenses.foodValues));
+        System.out.println("Média food (EM EURO): " + totalDespesas(User.expenses.foodValues) / 31);
+
+        /////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////
         
-//         System.out.println("Expenses:");
-//        System.out.println("Car Values:");
-//        for (double carValue : expenses.getCarValues()) {
-//            System.out.println(carValue);
-//        }
-//        System.out.println("Food Values:");
-//        for (double foodValue : expenses.getFoodValues()) {
-//            System.out.println(foodValue);
-//        }
-// MÉTODO ALTERNATIVO
+        CurrencyRates currencyRates = new CurrencyRates(1.30030, 125.00000, 0.87290); // Supondo as taxas de câmbio
+
+    
+        double totalCarExpensesEuros = totalDespesas(User.expenses.carValues);
+        double totalFoodExpensesEuros = totalDespesas(User.expenses.foodValues);
+
+      
+        double totalCarExpensesDollars = totalCarExpensesEuros * currencyRates.getEuroToDolar();
+        double totalCarExpensesYen = totalCarExpensesEuros * currencyRates.getEuroToIene();
+        double totalCarExpensesPounds = totalCarExpensesEuros * currencyRates.getEuroToGBP();
+
+        double totalFoodExpensesDollars = totalFoodExpensesEuros * currencyRates.getEuroToDolar();
+        double totalFoodExpensesYen = totalFoodExpensesEuros * currencyRates.getEuroToIene();
+        double totalFoodExpensesPounds = totalFoodExpensesEuros * currencyRates.getEuroToGBP();
+
+        System.out.println("TOTAL CARRO (EM DOLAR): " + totalCarExpensesDollars);
+        System.out.println("Média carro (EM DOLAR): " +  totalCarExpensesDollars / 31);
 
     }
 
