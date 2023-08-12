@@ -152,27 +152,43 @@ public class NewMain {
         ////////////////////////////////////////////
         int contadorDiferentes = 0;
 
-     
+        // Percorre listaA para encontrar elementos diferentes de listaB
         for (int i = 0; i < tamanhoA; i++) {
-           
+            // Inicialmente, assume que o elemento não está em listaB
             boolean encontradoEmListaB = true;
+
+            // Percorre listaB para verificar se o elemento está presente
             for (int j = 0; j < tamanhoB; j++) {
                 if (listaA[i] == listaB[j]) {
                     encontradoEmListaB = false;
-                    break; 
+                    break; // Encontrou o elemento em listaB, não precisa continuar procurando
                 }
             }
+
+            // Se o elemento não foi encontrado em listaB, adiciona ao vetor listaD
             if (encontradoEmListaB) {
                 listaD[contadorDiferentes] = listaA[i];
                 contadorDiferentes++;
             }
         }
 
+        
+        // Imprime o vetor novoVetorD
         System.out.print("O vetor D é ");
         for (int i = 0; i < contadorDiferentes; i++) {
             System.out.print(listaD[i] + " ");
         }
    
 
+//Utilizamos uma variável contadorDiferentes para acompanhar a quantidade de elementos diferentes encontrados em listaA em relação a listaB.
+//Em seguida, o programa inicia um loop for que percorre todos os elementos do vetor listaA.
+//Para cada elemento de listaA, declaramos uma variável booleana encontradoEmListaB e a inicializamos como false. Essa variável será utilizada para indicar se o elemento atual de listaA está presente em listaB.
+//Dentro do loop for aninhado, percorremos o vetor listaB para verificar se o elemento atual de listaA está presente em listaB. 
+//Se encontrarmos um elemento igual em listaB, alteramos o valor de encontradoEmListaB para true e usamos o comando break para interromper a busca, pois não precisamos continuar procurando.
+//Após o loop interno, verificamos se encontradoEmListaB ainda é false. Isso indica que o elemento atual de listaA não foi encontrado em listaB, portanto, é diferente de todos os elementos em listaB. 
+//Nesse caso, adicionamos o elemento ao vetor listaD na posição contadorDiferentes, que nos ajuda a acompanhar o próximo índice disponível no vetor listaD, e incrementamos contadorDiferentes.
+//Após percorrer o vetor listaA, criamos um novo vetor chamado novoVetorD com tamanho exato da quantidade de elementos diferentes encontrados. 
+//Por fim, o programa imprime o vetor listaD, que é o resultado final com os elementos de listaA que não se encontram em listaB.
+//A saída será uma sequência de elementos do vetor novoVetorD, mostrando os elementos de listaA que não estão presentes em listaB. 
     }
 }

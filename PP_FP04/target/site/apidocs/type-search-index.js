@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"pp_fp04.book","l":"Authors"},{"p":"pp_fp04.book","l":"Book"},{"p":"pp_fp04.book","l":"BookDemo"},{"p":"pp_fp04.exchange","l":"CurrencyRates"},{"p":"pp_fp04","l":"Expenses"},{"p":"pp_fp04","l":"Main"},{"p":"pp_fp04","l":"User"}]

@@ -1,0 +1,49 @@
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'13'
+-sourcepath
+'C:/Users/Miguel/Documents/NetBeansProjects/Practice/PP_FP04/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/Miguel/Documents/NetBeansProjects/Practice/PP_FP04/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'PP_FP04 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/13/docs/api' 'C:/Users/Miguel/Documents/NetBeansProjects/Practice/PP_FP04/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'PP_FP04 1.0-SNAPSHOT API'
+pp_fp04.book
+pp_fp04.exchange
+pp_fp04
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\src\main\java = 1691418733629
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\allclasses-index.html = 1691432027893
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\allpackages-index.html = 1691432027895
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\constant-values.html = 1691432027813
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\deprecated-list.html = 1691432027862
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\element-list = 1691432027790
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\help-doc.html = 1691432027900
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\index-all.html = 1691432027889
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\index.html = 1691432027865
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\member-search-index.js = 1691432027886
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\member-search-index.zip = 1691432027887
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\overview-summary.html = 1691432027897
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\overview-tree.html = 1691432027857
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\package-search-index.js = 1691432027875
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\package-search-index.zip = 1691432027883
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\script.js = 1691432027904
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\search.js = 1691432027906
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\stylesheet.css = 1691432027902
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\type-search-index.js = 1691432027884
+C:\Users\Miguel\Documents\NetBeansProjects\Practice\PP_FP04\target\site\apidocs\type-search-index.zip = 1691432027885
