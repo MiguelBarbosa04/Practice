@@ -1,7 +1,8 @@
-pp_fp05\ex02\Track.class
-pp_fp05\ex01\Expense.class
-pp_fp05\ex01\User.class
-pp_fp05\ex01\ExpensesDemo.class
-pp_fp05\ex02\CD.class
-pp_fp05\ex02\CDDemo.class
-pp_fp05\ex02\Artist.class
+pp_fp05\cd\CDDemo.class
+pp_fp05\cd\Artist.class
+pp_fp05\expenses\ExpensesDemo.class
+pp_fp05\cd\Author.class
+pp_fp05\expenses\Expense.class
+pp_fp05\cd\Track.class
+pp_fp05\expenses\User.class
+pp_fp05\cd\CD.class
