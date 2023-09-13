@@ -18,12 +18,15 @@ public class MountainBicycle extends Bicycle {
     private String[] bikeTools;
     private int bikeToolsCount;
 
-    public MountainBicycle(int numerOfLights, SuspensionEnum suspension) {
+    public MountainBicycle(int id, int numberOfGears, String mainColor, int wheelSize, BrakesEnum brakes, MaterialEnum material, double price, int guarantee, int numberOfLights, SuspensionEnum suspension) {
+        super(id, numberOfGears, mainColor, wheelSize, brakes, material, price, guarantee);
         this.numberOfLights = numberOfLights;
         this.suspension = suspension;
         this.bikeTools = new String[5];
         this.bikeToolsCount = 0;
     }
+
+   
 
     public int getNumberOfLights() {
         return numberOfLights;
@@ -53,9 +56,11 @@ public class MountainBicycle extends Bicycle {
             return false;
         }
     }
-    
-//Estamos dentro do loop for que percorre o array bikeTools, e chegamos a um ponto onde encontramos um utensílio que corresponde ao utensílio que desejamos remover. Vamos chamar esse utensílio de "utensílio encontrado".
-//Agora, precisamos remover esse utensílio da lista e garantir que não haja nenhum espaço vazio deixado para trás. Para fazer isso, precisamos mover todos os utensílios que estão à direita do "utensílio encontrado" uma posição à esquerda para preencher o espaço deixado pela remoção.
+
+//Estamos dentro do loop for que percorre o array bikeTools, e chegamos a um ponto onde encontramos um utensílio que corresponde ao utensílio que desejamos remover. 
+//Vamos chamar esse utensílio de "utensílio encontrado".
+//Agora, precisamos remover esse utensílio da lista e garantir que não haja nenhum espaço vazio deixado para trás.
+//Para fazer isso, precisamos mover todos os utensílios que estão à direita do "utensílio encontrado" uma posição à esquerda para preencher o espaço deixado pela remoção.
 //Imagine o array bikeTools da seguinte forma antes da remoção:
 //bikeTools: ["garrafa de água", "kit reparação pneu", "conta-quilómetros", "alforje", "suporte para telemóvel"]
 //Agora, suponhamos que queremos remover o "conta-quilómetros", que está na posição 2 (lembrando que os índices de array geralmente começam em 0).
@@ -67,7 +72,6 @@ public class MountainBicycle extends Bicycle {
 //Finalmente, definimos o último elemento como nulo para indicar que não há mais utensílios na última posição:
 //bikeTools: ["garrafa de água", "kit reparação pneu", "suporte para telemóvel", "alforje", null]
 //Agora, o "conta-quilómetros" foi removido, e não há espaços vazios deixados para trás no array. O contador toolCount também é decrementado para refletir a remoção bem-sucedida do utensílio.
-
     public void removeBikeTool(String tool) {
         for (int i = 0; i < bikeToolsCount; i++) {
             if (bikeTools[i] != null && bikeTools[i].equals(tool)) {
@@ -82,4 +86,25 @@ public class MountainBicycle extends Bicycle {
         }
 
     }
+
+    public void listBikeTools() {
+        System.out.println("Lista de tools:");
+        for (int i = 0; i < bikeToolsCount; i++) {
+            if (bikeTools[i] != null) {
+                System.out.println(bikeTools[i]);
+            }
+        }
+    }
+
+    public boolean editBikeTools(String antes, String depois) {
+        for (int i = 0; i < bikeToolsCount; i++) {
+            if (bikeTools[i] != null && bikeTools[i].equals(antes)) {
+                bikeTools[i] = depois;
+                return true;
+            }
+        }
+        return false;
+
+    }
+
 }
