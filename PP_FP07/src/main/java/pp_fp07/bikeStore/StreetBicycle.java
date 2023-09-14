@@ -23,7 +23,7 @@ public class StreetBicycle extends Bicycle {
         super(id, numberOfGears, mainColor, wheelSize, brakes, material, price, guarantee);
         this.handlebelt = handlebelt;
         this.frameSize = frameSize;
-
+        
         if (observations.length() <= 50) {
             this.observations = observations;
         } else {

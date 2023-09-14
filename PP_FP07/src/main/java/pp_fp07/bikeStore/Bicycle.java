@@ -21,7 +21,7 @@ public class Bicycle {
     private MaterialEnum material;
     private double price;
     private int guarantee;
-    private int countID = 0;
+    private static int countID = 0;
 
     public Bicycle(int id, int numberOfGears, String mainColor, int wheelSize, BrakesEnum brakes, MaterialEnum material, double price, int guarantee) {
         this.id = countID++;

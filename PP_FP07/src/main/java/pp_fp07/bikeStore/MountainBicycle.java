@@ -18,21 +18,21 @@ public class MountainBicycle extends Bicycle {
     private String[] bikeTools;
     private int bikeToolsCount;
 
+
     public MountainBicycle(int id, int numberOfGears, String mainColor, int wheelSize, BrakesEnum brakes, MaterialEnum material, double price, int guarantee, int numberOfLights, SuspensionEnum suspension) {
         super(id, numberOfGears, mainColor, wheelSize, brakes, material, price, guarantee);
         this.numberOfLights = numberOfLights;
         this.suspension = suspension;
         this.bikeTools = new String[5];
         this.bikeToolsCount = 0;
-    }
 
-   
+    }
 
     public int getNumberOfLights() {
         return numberOfLights;
     }
 
-    public SuspensionEnum GetSuspension() {
+    public SuspensionEnum getSuspension() {
         return suspension;
     }
 

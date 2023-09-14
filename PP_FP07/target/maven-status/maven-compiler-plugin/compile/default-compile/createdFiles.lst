@@ -2,6 +2,8 @@ pp_fp07\bikeStore\BikeDemo.class
 pp_fp07\bikeStore\enums\BrakesEnum.class
 pp_fp07\bikeStore\enums\MaterialEnum.class
 pp_fp07\bikeStore\MountainBicycle.class
+pp_fp07\bikeStore\BicycleManagement.class
+pp_fp07\bikeStore\enums\ModelEnum.class
 pp_fp07\bikeStore\enums\SuspensionEnum.class
 pp_fp07\bikeStore\Bicycle.class
 pp_fp07\bikeStore\StreetBicycle.class
